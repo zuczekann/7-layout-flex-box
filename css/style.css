@@ -1,0 +1,144 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 400px;
+  height: 600px;
+
+  display: flex;              /* wyświetlaj jako elastyczne pudełko  */
+  flex-direction: row;        /* kierunek wyświetlania  */
+  flex-wrap: wrap;            /* zawijanie elementów  */
+  justify-content: center;    /* rozłożenie elementów w pustych przestrzeniach  */
+  align-items: stretch;       /* dopasowanie się do kontenera  */
+}
+
+header, nav, article, aside, footer {
+  border: 0px;
+  /* border: 1px solid red; */
+  background-color: lavender;
+  text-transform: uppercase;
+  color: azure;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+header {
+  background-color: orangered;
+}
+
+nav {
+  background-color: lightgreen;       /* aside left */
+}
+
+article {
+  background-color: lightskyblue;     /* Lorem */
+}
+
+aside {
+  background-color: pink;              /* aside right */
+}
+
+footer {
+  background-color: purple;
+}
+
+
+@media screen and (max-width: 768px) { 
+  header, nav, article, aside, footer {
+    width: 100%;
+  }
+  header {
+    order: 1;
+    height: 10%;
+  }
+  nav {
+    order: 3;
+    height: 15%;
+  }
+  article {
+    order: 2;
+    height: 40%;
+  } 
+  aside {
+    order: 4;
+    height: 25%;
+  }
+  footer {
+    order: 5;
+    height: 10%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) { 
+  header {
+    order: 1;
+    height: 10%;
+    width: 100%;
+  }
+
+  nav {
+    order: 4;
+    height: 40%;
+    width: 100%;
+  }
+  article {
+    order: 2;
+    width: 70%;
+    height: 60%;
+  } 
+
+  aside {
+    order: 3;
+    width: 30%;
+    height: 60%;
+  }
+
+  footer {
+    order: 5;
+    height: 10%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) { 
+
+  .container {
+    height: 400px;
+    width: 600px;
+  }
+
+  header, footer {
+    height: 10%;
+    width: 100%;
+  }
+
+  nav, aside {
+    height: 80%;
+    width: 25%;
+  }
+
+  article {
+    order: 3;
+    height: 80%;
+    width: 50%;
+  } 
+
+  header {
+    order: 1;
+  }
+
+  nav {
+    order: 2;
+  }
+
+  aside {
+    order: 4;
+  }
+
+  footer {
+    order: 5;
+  }
+}
